@@ -20,6 +20,7 @@ a:hover{
 
 .header{
     margin-top: 1em;
+    margin-bottom: 2em;
     line-height: 3em;
 }
 
@@ -29,5 +30,45 @@ a:hover{
 
 .navbar a{
     margin-right: 20px;
+}
+
+
+.sidebar{
+
+}
+
+.profile-image{
+    max-width: 175px;
+    max-height: 175px;
+}
+
+.profile-image img{
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 100%;
+}
+
+.profile-name{
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.profile-description{
+    margin-top: 1em;
+    font-color: #888;
+    max-width: 200px;
+}
+
+.social-links{
+    margin-top: 1em;
+}
+
+.social-links a{
+    display: block;
+}
+
+.social-links i{
+    font-size: 1.2em;
+    margin-right: 5px;
 }
 
