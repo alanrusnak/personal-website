@@ -13,13 +13,14 @@ public class PostController {
     private PostRepository postRepository;
 
     @RequestMapping("/")
-    public String recentPosts() {
+    public String recentPosts(Model model) {
+        model.addAttribute("posts",postRepository.findTop5ByOrderByIdDesc());
        return "recentPosts";
     }
 
     @RequestMapping("/posts")
     public String allPosts(Model model) {
-        model.addAttribute("posts",postRepository.findAll());
+        model.addAttribute("posts",postRepository.findAllByOrderByIdDesc());
         return "allPosts";
     }
 

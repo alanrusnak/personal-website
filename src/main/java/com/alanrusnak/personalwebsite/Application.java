@@ -22,6 +22,14 @@ public class Application {
             newPost.setTitle("Title");
             newPost.setHtmlContent("Hello this is post content");
             repository.save(newPost);
+            newPost = new Post();
+            newPost.setTitle("Title2");
+            newPost.setHtmlContent("Hello this is post content2");
+            repository.save(newPost);
+            newPost = new Post();
+            newPost.setTitle("Title3");
+            newPost.setHtmlContent("Hello this is post content3");
+            repository.save(newPost);
 
             for (Post customer : repository.findAll()) {
                 System.out.println(customer.toString());

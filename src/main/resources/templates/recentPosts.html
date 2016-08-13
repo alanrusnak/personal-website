@@ -8,13 +8,9 @@
     <div class="posts-overview">
         <h1>Recent Posts</h1>
         <hr />
-        <article>
-            <h2><a href="#">How to win at life</a></h2>
-            <p>This is some explanation of Post</p>
-        </article>
-        <article>
-            <h2><a href="#">How to  be good at Java</a></h2>
-            <p>This is some explanation of Post</p>
+        <article th:each="post  : ${posts}">
+            <a href="#"><h2 th:text="${post.title}">Title</h2></a>
+            <p th:text="${post.htmlContent}">Preview Snippet</p>
         </article>
     </div>
 
