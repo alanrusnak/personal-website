@@ -6,8 +6,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class AdminController {
 
-    @RequestMapping("/admin")
-    public String recentPosts() {
-        return "admin/index";
+    @RequestMapping(value={"/admin", "/admin/edit-posts"})
+    public String editPosts() {
+        return "admin/edit-posts";
+    }
+
+    @RequestMapping("/admin/new-post")
+    public String newPost() {
+        return "admin/new-post";
     }
 }
