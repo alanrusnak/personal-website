@@ -5,6 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.time.LocalDateTime;
 
 @Entity
 public class Post {
@@ -13,7 +14,16 @@ public class Post {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
     private String title;
+    private String description;
     private String htmlContent;
+    private LocalDateTime creationTime;
+
+    public Post(String title, String description, String htmlContent) {
+        this.title = title;
+        this.description = description;
+        this.htmlContent = htmlContent;
+        this.creationTime =  LocalDateTime.now();
+    }
 
     public Long getId() {
         return id;
@@ -31,11 +41,27 @@ public class Post {
         this.title = title;
     }
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     public String getHtmlContent() {
         return htmlContent;
     }
 
     public void setHtmlContent(String htmlContent) {
         this.htmlContent = htmlContent;
+    }
+
+    public LocalDateTime getCreationTime() {
+        return creationTime;
+    }
+
+    public void setCreationTime(LocalDateTime creationTime) {
+        this.creationTime = creationTime;
     }
 }
