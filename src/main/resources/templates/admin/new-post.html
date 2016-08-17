@@ -6,7 +6,14 @@
 <body>
 <div layout:fragment="content">
     <div class="posts-overview">
-        <h1>New post!</h1>
+        <h1>New post:</h1>
+        <div id="summernote">Hello Summernote</div>
+
+        <script>
+            $(document).ready(function() {
+              $('#summernote').summernote();
+            });
+        </script>
 
     </div>
 </div>
