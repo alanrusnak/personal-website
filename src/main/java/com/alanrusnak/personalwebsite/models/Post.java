@@ -18,7 +18,13 @@ public class Post {
     private String htmlContent;
     private LocalDateTime creationTime;
 
+
+    public Post() {
+        super();
+    }
+
     public Post(String title, String description, String htmlContent) {
+        super();
         this.title = title;
         this.description = description;
         this.htmlContent = htmlContent;
@@ -63,5 +69,15 @@ public class Post {
 
     public void setCreationTime(LocalDateTime creationTime) {
         this.creationTime = creationTime;
+    }
+
+    @Override
+    public String toString() {
+        return "Post{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", creationTime=" + creationTime +
+                '}';
     }
 }

@@ -7,6 +7,12 @@
 <div layout:fragment="content">
     <div class="posts-overview">
         <h1>New post:</h1>
+        <form action="#" th:action="@{/admin/new-post}" th:object="${post}" method="post">
+            <p>Title: <input type="text" th:field="*{title}" /></p>
+            <p>Description: <input type="text" th:field="*{description}" /></p>
+            <input type="hidden" th:field="*{htmlContent}" />
+            <p><input type="submit" value="Submit" />
+        </form>
         <div id="summernote">Hello Summernote</div>
 
         <script>

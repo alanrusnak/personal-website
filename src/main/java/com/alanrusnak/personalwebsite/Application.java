@@ -25,15 +25,15 @@ public class Application {
             // save a couple of customers
             Post newPost = new Post();
             newPost.setTitle("Title");
-            newPost.setHtmlContent("Hello this is post content");
+            newPost.setDescription("Hello this is post content");
             repository.save(newPost);
             newPost = new Post();
             newPost.setTitle("Title2");
-            newPost.setHtmlContent("Hello this is post content2");
+            newPost.setDescription("Hello this is post content2");
             repository.save(newPost);
             newPost = new Post();
             newPost.setTitle("Title3");
-            newPost.setHtmlContent("Hello this is post content3");
+            newPost.setDescription("Hello this is post content3");
             repository.save(newPost);
 
             for (Post customer : repository.findAll()) {
