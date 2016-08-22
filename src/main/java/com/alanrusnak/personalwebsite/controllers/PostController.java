@@ -4,7 +4,10 @@ import com.alanrusnak.personalwebsite.repositories.PostRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class PostController {
@@ -22,6 +25,12 @@ public class PostController {
     public String allPosts(Model model) {
         model.addAttribute("posts",postRepository.findAllByOrderByIdDesc());
         return "allPosts";
+    }
+
+    @RequestMapping("/post/{postId}")
+    public String getPost(@PathVariable(value="postId") String postId, Model model) {
+        model.addAttribute("post", postRepository.findOne(Long.parseLong(postId)));
+        return "post";
     }
 
 

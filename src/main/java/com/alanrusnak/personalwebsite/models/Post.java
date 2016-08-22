@@ -1,10 +1,7 @@
 package com.alanrusnak.personalwebsite.models;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
@@ -15,6 +12,8 @@ public class Post {
     private Long id;
     private String title;
     private String description;
+
+    @Column(length = 50000)
     private String htmlContent;
     private LocalDateTime creationTime;
 

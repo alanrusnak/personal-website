@@ -10,10 +10,12 @@
         <form action="#" th:action="@{/admin/new-post}" th:object="${post}" method="post">
             <p>Title: <input type="text" th:field="*{title}" /></p>
             <p>Description: <input type="text" th:field="*{description}" /></p>
-            <input type="hidden" th:field="*{htmlContent}" />
-            <p><input type="submit" value="Submit" />
+
+            <input id="htmlContentInput" type="hidden" th:field="*{htmlContent}" />
+            <div id="summernote">Hello Summernote</div>
+
+            <p><input type="submit" onclick="appendSummernoteText()" value="Submit" />
         </form>
-        <div id="summernote">Hello Summernote</div>
 
         <script>
             $(document).ready(function() {
@@ -21,6 +23,11 @@
                 height: 300
                });
             });
+
+            function appendSummernoteText(){
+                $('input#htmlContentInput').val($('#summernote').summernote('code'));
+                return true;
+            }
         </script>
 
     </div>
