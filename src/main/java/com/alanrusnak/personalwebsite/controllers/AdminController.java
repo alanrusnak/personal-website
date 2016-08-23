@@ -29,6 +29,6 @@ public class AdminController {
     @RequestMapping(value="/admin/new-post", method= RequestMethod.POST)
     public String newPostSubmit(@ModelAttribute Post post) {
         postService.savePost(post);
-        return "/admin/edit-posts";
+        return "redirect:/admin/edit-posts";
     }
 }
