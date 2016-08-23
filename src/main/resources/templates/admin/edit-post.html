@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layouts/admin-layout}">
+<head>
+    <title>Edit Post</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <div class="posts-overview">
+        <h1>Edit post:</h1>
+        <form action="#" th:action="@{/admin/edit-post}" th:object="${post}" method="post">
+            <p>Title: <input type="text" th:field="*{title}" /></p>
+            <p>Description: <input type="text" th:field="*{description}" /></p>
+
+            <input id="idInput" type="hidden" th:field="*{id}" />
+            <input id="htmlContentInput" type="hidden" th:field="*{htmlContent}" />
+            <div id="summernote">Hello Summernote</div>
+
+            <p><input type="submit" onclick="appendSummernoteText()" value="Submit" />
+        </form>
+
+        <script>
+            $(document).ready(function() {
+              $('#summernote').summernote({
+                height: 300
+               });
+               console.log($('input#htmlContentInput').val());
+               $('#summernote').summernote('code',$('input#htmlContentInput').val());
+            });
+
+            function appendSummernoteText(){
+                $('input#htmlContentInput').val($('#summernote').summernote('code'));
+                return true;
+            }
+        </script>
+
+    </div>
+</div>
+</body>
+</html>
