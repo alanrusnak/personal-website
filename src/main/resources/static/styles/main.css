@@ -79,6 +79,10 @@ a:hover{
 
 /* Posts Overview*/
 
+.posts-overview{
+    width: 80%;
+}
+
 .posts-overview hr{
     margin-top: 10px;
     margin-bottom: 10px;
