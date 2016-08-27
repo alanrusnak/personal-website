@@ -17,6 +17,10 @@
 
             <p><input type="submit" onclick="appendSummernoteText()" value="Submit" />
         </form>
+        <form action="#" th:action="@{/admin/delete-post}" th:object="${post}" method="post">
+            <input id="idInputDelete" type="hidden" th:field="*{id}" />
+            <input type="submit"  value="Delete" />
+        </form>
 
         <script>
             $(document).ready(function() {

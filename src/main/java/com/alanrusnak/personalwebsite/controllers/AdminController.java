@@ -56,4 +56,12 @@ public class AdminController {
         log.info("Saved post: {}", post);
         return "redirect:/admin/edit-posts";
     }
+
+    @RequestMapping(value="/admin/delete-post", method= RequestMethod.POST)
+    public String deletePostSubmit(@ModelAttribute Post post) {
+        log.info("Deleting post: {}", post);
+        postRepository.delete(post.getId());
+        log.info("Deleted post: {}", post);
+        return "redirect:/admin/edit-posts";
+    }
 }
