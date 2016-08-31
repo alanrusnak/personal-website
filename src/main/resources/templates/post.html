@@ -9,7 +9,9 @@
         <h1 th:text="${post.title}"></h1>
         <hr />
         <div class="post-content" th:utext="${post.htmlContent}"></div>
+        <hr />
     </div>
+    <div class="comments" th:include="layouts/comments :: disqus"></div>
 </div>
 </body>
 </html>
